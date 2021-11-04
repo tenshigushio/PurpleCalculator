@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MainPage">
+
+    <StackLayout BackgroundColor="#202020">
+        <Frame BackgroundColor="#101010" HeightRequest="150">
+            <Label x:Name="output"
+                Text="0"
+                FontSize="36"
+                FontAttributes="Bold"
+                TextColor="WhiteSmoke"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+            />
+        </Frame>
+        <Grid BackgroundColor="#202020" HeightRequest="475">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- **FIRST ROW** -->
+            <Button Text="M +"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="DimGray"
+            />
+            <Button Text="M -"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="DimGray"
+            />
+            <Button Text="MC"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="DimGray"
+            />
+            <Button Text="MR"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="DimGray"
+            />
+
+            <!-- **SECOND ROW** -->
+            <Button Text="%"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    Clicked="OnOperatorSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+            <Button Text="CE"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+            <Button Text="C"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    Clicked="OnClear"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+            <Button Text="⌫"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Clicked="OnBackspace"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+            <!-- **THIRD ROW** -->
+            <Button Text="1/x"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+            <Button Text="x²"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+            <Button Text="²√x"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+                    
+            />
+            <Button Text="÷"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Clicked="OnOperatorSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+
+            <!-- **FORTH ROW** -->
+            <Button Text="7"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="8"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="9"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+                    
+            />
+            <Button Text="×"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Clicked="OnOperatorSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+
+            <!-- **FIFTH ROW** -->
+            <Button Text="4"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="5"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="6"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+                    
+            />
+            <Button Text="−"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Clicked="OnOperatorSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+
+            <!-- **SIXTH ROW** -->
+            <Button Text="1"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="2"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="3"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+                    
+            />
+            <Button Text="+"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="5"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Clicked="OnOperatorSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#6441A4"
+            />
+
+            <!-- **SEVENTH ROW** -->
+            <Button Text="~"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="WhiteSmoke"
+            />
+            <Button Text="0"
+                    TextColor="WhiteSmoke"
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    Clicked="OnNumberSelect"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="Black"
+            />
+            <Button Text="."
+                    FontAttributes="Bold"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="WhiteSmoke"
+                    
+            />
+            <Button Text="="
+                    TextColor="WhiteSmoke"
+                    Grid.Row="6"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Clicked="OnCalculate"
+                    Margin="5"
+                    Opacity="60"
+                    BackgroundColor="#9146FF"
+            />
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
