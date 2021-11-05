@@ -230,7 +230,7 @@
                     BackgroundColor="Black"
                     
             />
-            <Button Text="−"
+            <Button Text="-"
                     TextColor="WhiteSmoke"
                     Grid.Row="4"
                     Grid.Column="3"
